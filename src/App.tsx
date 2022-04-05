@@ -1,10 +1,14 @@
 import React from 'react';
 import './App.css';
+import { Todolist } from './Todolist';
 
 function App() {
     return (
         <div className="App">
-            <div>
+
+            <Todolist/>
+            <Todolist/>
+            {/*<div>
                 <h1>What to learn</h1>
                 <div>
                     <input/>
@@ -20,7 +24,7 @@ function App() {
                     <button>Active</button>
                     <button>Completed</button>
                 </div>
-            </div>
+    </div>*/}
         </div>
     );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Todolist=()=>{
+ export const Todolist=()=>{
     return(
         <div>
                 <h1>What to learn</h1>
