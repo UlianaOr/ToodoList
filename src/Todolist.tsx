@@ -24,7 +24,7 @@ type InArrayPropsType={
                 <ul>
                     {props.arr.map((el :InArrayPropsType)=>{
                         return(
-                            <li><input type="checkbox" checked={props.arr[0].isDone}/> <span>{props.arr[0].title}</span></li>
+                            <li><input type="checkbox" checked={el.isDone}/> <span>{el.title}</span></li>
 
                         )
                     })}
