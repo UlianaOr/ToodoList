@@ -7,7 +7,7 @@ function App() {
         <div className="App">
 
             <Todolist topic={'What to learn111'}/>
-            <Todolist/>
+            <Todolist topic={'Hello22222'}/>
             {/*<div>
                 <h1>What to learn</h1>
                 <div>

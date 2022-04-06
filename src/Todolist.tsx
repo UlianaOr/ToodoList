@@ -8,7 +8,7 @@ type TodolistPropsType={
  export const Todolist=(props:TodolistPropsType)=>{
     return(
         <div>
-                <h1>What to learn</h1>
+                <h1>{props.topic}</h1>
                 <div>
                     <input/>
                     <button>+</button>
