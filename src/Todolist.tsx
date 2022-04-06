@@ -1,14 +1,22 @@
 
+import { type } from "os";
 import React from "react";
 
 type TodolistPropsType={
-    topic: string
+    topic1: string
+    arr:Array<InArrayPropsType>
+}
+
+type InArrayPropsType={
+    id: number,
+    title: string,
+    isDone: boolean
 }
 
  export const Todolist=(props:TodolistPropsType)=>{
     return(
         <div>
-                <h1>{props.topic}</h1>
+                <h1>{props.topic1}</h1>
                 <div>
                     <input/>
                     <button>+</button>

@@ -21,8 +21,8 @@ function App() {
     return (
         <div className="App">
 
-            <Todolist topic={'What to learn111'}/>
-            <Todolist topic={'Hello22222'}/>
+            <Todolist topic1={'What to learn111'} arr={arr1}/>
+            <Todolist topic1={'Hello22222'} arr={arr2}/>
             {/*<div>
                 <h1>What to learn</h1>
                 <div>
