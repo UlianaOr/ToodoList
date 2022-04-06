@@ -6,7 +6,7 @@ function App() {
     return (
         <div className="App">
 
-            <Todolist/>
+            <Todolist topic={'What to learn111'}/>
             <Todolist/>
             {/*<div>
                 <h1>What to learn</h1>
