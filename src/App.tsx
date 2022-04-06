@@ -3,6 +3,21 @@ import './App.css';
 import { Todolist } from './Todolist';
 
 function App() {
+    const arr1=[
+        {id: 1, title: "HTML&CSS", isDone: true},
+        {id: 2, title: "JS", isDone: true},
+        {id: 3, title: "ReactJS", isDone: false},
+        {id: 4, title: "Rest API", isDone: false},
+        {id: 5, title: "GraphQL", isDone: false},
+    ]
+
+    const arr2=[
+        {id: 1, title: "HTML&CSS222", isDone: true},
+        {id: 2, title: "JS22", isDone: true},
+        {id: 3, title: "ReactJS222", isDone: false},
+        {id: 4, title: "Rest API222", isDone: false},
+        {id: 5, title: "GraphQL222", isDone: false},
+    ]
     return (
         <div className="App">
 
