@@ -2,18 +2,18 @@
 import { type } from "os";
 import React from "react";
 
-type TodolistPropsType={
+type PropsType={
     topic1: string
-    arr:Array<InArrayPropsType>
+    arr:Array<TaskType>
 }
 
-type InArrayPropsType={
+type TaskType={
     id: number,
     title: string,
     isDone: boolean
 }
 
- export const Todolist=(props:TodolistPropsType)=>{
+ export const Todolist=(props:PropsType)=>{
     return(
         <div>
                 <h1>{props.topic1}</h1>
@@ -22,7 +22,7 @@ type InArrayPropsType={
                     <button>+</button>
                 </div>
                 <ul>
-                    {props.arr.map((el :InArrayPropsType)=>{
+                    {props.arr.map((el :TaskType)=>{
                         return(
                             <li><input type="checkbox" checked={el.isDone}/> <span>{el.title}</span></li>
 

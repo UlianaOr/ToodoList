@@ -3,7 +3,7 @@ import './App.css';
 import { Todolist } from './Todolist';
 
 function App() {
-    const arr1=[
+    const tasks1  = [
         {id: 1, title: "HTML&CSS", isDone: true},
         {id: 2, title: "JS", isDone: true},
         {id: 3, title: "ReactJS", isDone: false},
@@ -11,7 +11,7 @@ function App() {
        
     ]
 
-    const arr2=[
+    const tasks2 = [
         {id: 1, title: "HTML&CSS222", isDone: true},
         {id: 2, title: "JS22", isDone: true},
         {id: 3, title: "ReactJS222", isDone: false},
@@ -21,8 +21,8 @@ function App() {
     return (
         <div className="App">
 
-            <Todolist topic1={'What to learn111'} arr={arr1}/>
-            <Todolist topic1={'Hello22222'} arr={arr2}/>
+            <Todolist topic1={'What to learn111'} arr={tasks1}/>
+            <Todolist topic1={'Hello22222'} arr={tasks2}/>
             {/*<div>
                 <h1>What to learn</h1>
                 <div>
