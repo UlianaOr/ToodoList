@@ -3,8 +3,9 @@ import { type } from "os";
 import React from "react";
 
 type PropsType={
-    topic1: string
-    arr:Array<TaskType>
+    title: string
+    tasks: Array <TaskType>
+    removeTask: (id:number)=>void
 }
 
 type TaskType={
@@ -13,19 +14,17 @@ type TaskType={
     isDone: boolean
 }
 
- export const Todolist=(props:PropsType)=>{
-    return(
-        <div>
-                <h1>{props.topic1}</h1>
+ export function Todolist=(props:PropsType) {
+    return <div>
+                <h3>{props.title}</h3>
                 <div>
                     <input/>
                     <button>+</button>
                 </div>
                 <ul>
-                    {props.arr.map((el :TaskType)=>{
+                    {props.tasks.map((el :TaskType)=>{
                         return(
-                            <li><input type="checkbox" checked={el.isDone}/> <span>{el.title}</span></li>
-
+                            <li key={el.id}
                         )
                     })}
                     {/*<li><input type="checkbox" checked={true}/> <span>HTML&CSS</span></li>
