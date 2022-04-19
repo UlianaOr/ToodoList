@@ -31,9 +31,7 @@ type TaskType={
                             </li>
                         )
                     })}
-                    {/*<li><input type="checkbox" checked={true}/> <span>HTML&CSS</span></li>
-                    <li><input type="checkbox" checked={true}/> <span>JS</span></li>
-                <li><input type="checkbox" checked={false}/> <span>React</span></li>*/}
+                    
                 </ul>
                 <div>
                     <button>All</button>
@@ -41,6 +39,6 @@ type TaskType={
                     <button>Completed</button>
                 </div>
             </div>
-    )
+    
 
 }
