@@ -11,7 +11,8 @@ function App() {
        
     ]
 
-    const removeTask =(id.number)=>{
+    
+    const removeTask=(id:number)=>{
         console.log(id)
     }
     return (

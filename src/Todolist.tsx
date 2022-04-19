@@ -14,7 +14,7 @@ type TaskType={
     isDone: boolean
 }
 
- export function Todolist=(props:PropsType) {
+ export function Todolist  (props:PropsType) {
     return <div>
                 <h3>{props.title}</h3>
                 <div>
@@ -24,7 +24,11 @@ type TaskType={
                 <ul>
                     {props.tasks.map((el :TaskType)=>{
                         return(
-                            <li key={el.id}
+                            <li key={el.id}>
+                                <button onClick={()=> props.removeTask(el.id)}>X</button>
+                                <input type="checkbox" checked={el.isDone}/>
+                                <span>{el.title}</span>
+                            </li>
                         )
                     })}
                     {/*<li><input type="checkbox" checked={true}/> <span>HTML&CSS</span></li>
