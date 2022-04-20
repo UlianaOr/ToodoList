@@ -21,7 +21,8 @@ function App() {
 
     
     const removeTask=(newid: number)=>{
-        tasks1 =tasks1.filter((el.))
+        tasks1 =tasks1.filter((el:)=>el.id!==newid)
+        console.log()
     }
     return (
         <div className="App">
