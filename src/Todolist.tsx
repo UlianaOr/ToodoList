@@ -1,6 +1,6 @@
 
 import { type } from "os";
-import React from "react";
+import React,{useState} from "react";
 
 type PropsType={
     title: string
