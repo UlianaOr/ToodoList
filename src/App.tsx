@@ -22,6 +22,16 @@ function App() {
       setTasks1(tasks1.filter((el)=>el.id !== id))
     }
 
+    let filteredTask =tasks1
+
+if (filter==='Activ') {
+    filteredTask=tasks1.filter((el)=>!el.isDone)
+}
+
+if (filter==='Completed') {
+    filteredTask=tasks1.filter((el)=>el.isDone)
+}
+
     
 
 
