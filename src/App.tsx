@@ -22,6 +22,8 @@ function App() {
       setTasks1(tasks1.filter((el)=>el.id !== id))
     }
 
+    //переменная filteredTask
+
     let filteredTask =tasks1
 
 if (filter==='Activ') {
@@ -42,7 +44,11 @@ const changeFilter=(filterValue:string)=>{
     return (
         <div className="App">
             
-            <Todolist title="What to learn" tasks={tasks1} removeTask={removeTask} changeFilter={changeFilter}/>
+            <Todolist 
+              title="What to learn"
+              tasks={tasks1}
+              removeTask={removeTask} 
+              changeFilter={changeFilter}/>
       
             
         </div>
