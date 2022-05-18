@@ -16,7 +16,7 @@ function App() {
         ]
     )
 
-    const[filter, setfilter] =useState ('All')
+    const[filter, setfilter] = useState ('All')
    
     const removeTask=(id:number)=>{
       setTasks1(tasks1.filter((el)=>el.id !== id))
