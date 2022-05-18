@@ -8,7 +8,7 @@ function App() {
 
    
 
-   const[tasks1,setTasks1]=useState(
+   const[tasks1,setTasks1]=useState (
         [
             { id: 1, title: "HTML&CSS", isDone: true },
             { id: 2, title: "JS", isDone: true },
@@ -16,7 +16,7 @@ function App() {
         ]
     )
 
-    const[filter, setfilter] = useState ('All')
+    const[filter, setFilter] = useState ('All')
    
     const removeTask=(id:number)=>{
       setTasks1(tasks1.filter((el)=>el.id !== id))
