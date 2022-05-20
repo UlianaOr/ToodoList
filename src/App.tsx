@@ -39,6 +39,7 @@ if (filter==='Completed') {
 
 const changeFilter=(filterValue:string)=>{
  console.log(filterValue)
+ setFilter(filterValue)
 }
 
     return (
