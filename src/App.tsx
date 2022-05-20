@@ -47,7 +47,7 @@ const changeFilter=(filterValue:string)=>{
             
             <Todolist 
               title="What to learn"
-              tasks={tasks1}
+              tasks={filteredTask}
               removeTask={removeTask} 
               changeFilter={changeFilter}/>
       
