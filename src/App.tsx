@@ -1,8 +1,10 @@
 
 import React, { useState } from 'react';
+import { v1 } from 'uuid';
 import './App.css';
 
 import {Todolist} from './Todolist';
+
 
 function App() {
 
@@ -10,9 +12,9 @@ function App() {
 
    const[tasks1,setTasks1]=useState (
         [
-            { id: 1, title: "HTML&CSS", isDone: true },
-            { id: 2, title: "JS", isDone: true },
-            { id: 3, title: "ReactJS", isDone: false }
+            { id: v1(), title: "HTML&CSS", isDone: true },
+            { id: v1(), title: "JS", isDone: true },
+            { id: v1(), title: "ReactJS", isDone: false }
         ]
     )
 
