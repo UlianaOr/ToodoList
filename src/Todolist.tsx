@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 
 type TaskType = {
-    id: number
+    id: string
     title: string
     isDone: boolean
 }

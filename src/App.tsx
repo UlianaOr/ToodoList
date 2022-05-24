@@ -10,7 +10,7 @@ function App() {
 
    
 
-   const[tasks1,setTasks1]=useState (
+    let [tasks,setTasks]=useState (
         [
             { id: v1(), title: "HTML&CSS", isDone: true },
             { id: v1(), title: "JS", isDone: true },
@@ -18,31 +18,36 @@ function App() {
         ]
     )
 
-    const[filter, setFilter] = useState ('All')
-   
-    const removeTask=(id:number)=>{
-      setTasks1(tasks1.filter((el)=>el.id !== id))
+
+        function removeTask(id:string){
+        let filteredTask=tasks.filter(t =>t.id !=id);
+        setTask(filteredTask);
     }
 
-    //переменная filteredTask
 
-    let filteredTask =tasks1
+
+    let [filter, setFilter] = useState <FilterValuesType> ('All')
+   
+    
+
+    
+
+    let tasksForTodolist= tasks;
 
 if (filter==='Activ') {
-    filteredTask=tasks1.filter((el)=>!el.isDone)
+    tasksForTodolist=tasks.filter(t => t.isDone === false)
 }
 
 if (filter==='Completed') {
-    filteredTask=tasks1.filter((el)=>el.isDone)
+    tasksForTodolist=tasks.filter(t => t.isDone === false)
 }
 
     
 
 
-const changeFilter=(filterValue:string)=>{
- console.log(filterValue)
- setFilter(filterValue)
-}
+    function changeFilter (value: FilterValuesType) {
+        setFilter(value)
+    }
 
     return (
         <div className="App">
