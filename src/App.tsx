@@ -49,12 +49,14 @@ if (filter==='Completed') {
         setFilter(value)
     }
 
+
+
     return (
         <div className="App">
             
             <Todolist 
               title="What to learn"
-              tasks={filteredTask}
+              tasks={tasksForTodolist}
               removeTask={removeTask} 
               changeFilter={changeFilter}/>
       

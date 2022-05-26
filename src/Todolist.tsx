@@ -9,11 +9,13 @@ type TaskType = {
     isDone: boolean
 }
 
+
+
 type PropsType = {
     title: string
     tasks: Array<TaskType>
-    removeTask:(id:number)=>void
-    changeFilter:(filterValue:string)=>void
+    removeTask:(taskId:string)=>void
+    changeFilter:(value: FilterValuesType)=>void
 
 }
 
