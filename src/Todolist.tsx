@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { FilterValuesType } from './App';
 
 
 
@@ -28,7 +29,7 @@ export function Todolist(props: PropsType) {
             <h3>{props.title}</h3>
             <div>
             <input />
-            <button>Add</button>
+            <button onClick={props.addTask}>Add</button>
         </div>
           
             <ul>

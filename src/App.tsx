@@ -5,6 +5,8 @@ import './App.css';
 
 import {Todolist} from './Todolist';
 
+export type FilterValuesType = "All"|"Active"|"Completed";
+
 
 function App() {
 
@@ -38,7 +40,7 @@ function App() {
 
     let tasksForTodolist= tasks;
 
-if (filter==='Activ') {
+if (filter==='Active') {
     tasksForTodolist=tasks.filter(t => t.isDone === false)
 }
 
@@ -62,7 +64,9 @@ if (filter==='Completed') {
               title="What to learn"
               tasks={tasksForTodolist}
               removeTask={removeTask} 
-              changeFilter={changeFilter}/>
+              changeFilter={changeFilter}
+              addTask= {addTask}
+              />
       
             
         </div>
