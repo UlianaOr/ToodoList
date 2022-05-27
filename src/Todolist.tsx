@@ -16,6 +16,8 @@ type PropsType = {
     tasks: Array<TaskType>
     removeTask:(taskId:string)=>void
     changeFilter:(value: FilterValuesType)=>void
+    addTask:()=>void 
+
 
 }
 

@@ -18,10 +18,14 @@ function App() {
         ]
     )
 
+    const addTask=()=> {
+        console.log("jjhh")
+    }
+
 
         function removeTask(id:string){
         let filteredTask=tasks.filter(t =>t.id !=id);
-        setTask(filteredTask);
+        setTasks(filteredTask);
     }
 
 
