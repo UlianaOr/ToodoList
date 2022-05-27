@@ -20,10 +20,7 @@ type PropsType = {
 }
 
 export function Todolist(props: PropsType) {
-
-  
-
-    return (
+        return (
 
         <div>
             <h3>{props.title}</h3>
@@ -33,17 +30,14 @@ export function Todolist(props: PropsType) {
         </div>
           
             <ul>
-                {props.tasks.map((el)=>{
-                 return(
-                        <li key={el.id}>
+                {props.tasks.map(t => <li key= {t.id}>
+                    <input type ="checkbox" checked={t.isDone}/>
+                    <span>{t.title}</span>
+                    <button onClick={() => {props.removeTask(t.id)}}>x</button>
 
-                        <input type="checkbox" checked={el.isDone} />
-                         <span>{el.title}</span>
-                         <button onClick={()=>{props.removeTask(el.id)}}>Quit</button>
+                </li>
 
-                        </li>
-                 )
-                })}
+                )}
 
                
             </ul>
