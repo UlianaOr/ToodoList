@@ -21,7 +21,7 @@ function App() {
     )
 
     const addTask=()=> {
-        console.log("jjhh")
+        console.log("Hello")
     }
 
 
@@ -45,7 +45,7 @@ if (filter==='Active') {
 }
 
 if (filter==='Completed') {
-    tasksForTodolist=tasks.filter(t => t.isDone === false)
+    tasksForTodolist=tasks.filter(t => t.isDone === true)
 }
 
     
