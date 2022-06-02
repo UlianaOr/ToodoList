@@ -21,6 +21,7 @@ function App() {
     )
 
     const addTask=()=> {
+        let newTask = {id: v1(), title: "newNewNew", isDone: true}
         console.log("Hello")
     }
 
