@@ -20,8 +20,8 @@ function App() {
         ]
     )
 
-    const addTask=()=> {
-        let newTask = {id: v1(), title: "newNewNew", isDone: true}
+    const addTask=(newTitle:string)=> {
+        let newTask = {id: v1(), title: newTitle, isDone: true}
         console.log([newTask, ...tasks])
         setTasks([newTask, ... tasks])
        
