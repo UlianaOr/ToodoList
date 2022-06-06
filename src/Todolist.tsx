@@ -23,12 +23,14 @@ type PropsType = {
 }
 
 export function Todolist(props: PropsType) {
+    let [newTitle,setNewTitle]= useState("")
+    console.log(newTitle)
         return (
 
         <div>
             <h3>{props.title}</h3>
             <div>
-            <input onChange={(event)=> console .log (event.currentTarget.value)} />
+            <input onChange={(event)=> setNewTitle (event.currentTarget.value)} />
             <button onClick={()=> console.log ("wewe")}>+</button>
             <button onClick={props.addTask}>Add</button>
         </div>
