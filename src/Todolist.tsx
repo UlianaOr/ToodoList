@@ -44,6 +44,16 @@ export function Todolist(props: PropsType) {
     }
 
 
+    const chengeFilterHandlerAll=()=>{
+        props.changeFilter("All")
+    }
+
+    const chengeFilterHandlerActiv=()=>{
+        props.changeFilter("Active")
+
+    }
+
+
 
         return (
 
@@ -68,9 +78,9 @@ export function Todolist(props: PropsType) {
                
             </ul>
             <div>
-                <button onClick={()=>{props.changeFilter("All")}}>All</button>
+                <button onClick={chengeFilterHandlerAll}>All</button>
 
-                <button onClick={()=>{props.changeFilter("Active")}}>Active</button>
+                <button onClick={chengeFilterHandlerActiv}>Active</button>
                 <button onClick={()=>{props.changeFilter("Completed")}}>Completed</button>
             </div>
 
