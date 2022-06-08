@@ -20,11 +20,16 @@ function App() {
         ]
     )
 
-    const addTask=(newTitle:string)=> {
-        let newTask = {id: v1(), title: newTitle, isDone: true}
-        console.log([newTask, ...tasks])
-        setTasks([newTask, ... tasks])
+    const addTask=(title:string)=> {
+        let task = {id: v1(), title: title, isDone: false}
+        let newTasks = [task, ...tasks]
+        setTasks(newTasks)
        
+    }
+
+    const changeIsDone =(isDone:boolean)=> {
+        console.log(isDone)
+
     }
 
 
@@ -69,6 +74,7 @@ if (filter==='Completed') {
                 removeTask={removeTask}
                 changeFilter={changeFilter}
                 addTask={addTask} 
+                changeIsDone={changeIsDone}
                             />
       
             
