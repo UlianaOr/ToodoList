@@ -28,7 +28,7 @@ function App() {
     }
 
     const changeIsDone =(id:string,isDone:boolean)=> {
-        setTasks([...tasks,])
+        setTasks(tasks.map(el=>el.id===id ? {...el,isDone:isDone} :el))
 
     }
 
