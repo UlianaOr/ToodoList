@@ -27,8 +27,8 @@ function App() {
        
     }
 
-    const changeIsDone =(isDone:boolean)=> {
-        console.log(isDone)
+    const changeIsDone =(id:string,isDone:boolean)=> {
+        setTasks([...tasks,])
 
     }
 
