@@ -1,6 +1,7 @@
 
 import React, { ChangeEvent,KeyboardEvent, useState } from 'react';
 import { FilterValuesType } from './App';
+import styles from './Todolist.module.css'
 
 
 
@@ -79,7 +80,8 @@ export function Todolist(props: PropsType) {
         <div>
             <h3>{props.title}</h3>
             <div>
-            <input value={title} onChange={onChangeHandler} onKeyPress={onKeyPressHendler} />
+            <input value={title} className={styles.error}
+            onChange={onChangeHandler} onKeyPress={onKeyPressHendler} />
             <button onClick={addTaskHandler}>+</button>
             
         </div>
