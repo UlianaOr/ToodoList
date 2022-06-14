@@ -1,5 +1,6 @@
 
 import React, { ChangeEvent,KeyboardEvent, useState } from 'react';
+
 import { FilterValuesType } from './App';
 import styles from './Todolist.module.css'
 
@@ -28,17 +29,21 @@ type PropsType = {
 
 
 export function Todolist(props: PropsType) {
+    let[error,setError]=useState(false)
 
     let [title,setTitle]= useState("")
 
     const addTask =()=> {
         if(title.trim()!==""){
         props.addTask(title.trim())
-        setTitle("")
+        setTitle("");
+        }else{
+           setError(true)
         }
     }
 
     const onChangeHandler =(event:ChangeEvent<HTMLInputElement>)=>{
+        setError (false)
         setTitle(event.currentTarget.value)
     }
 
@@ -80,7 +85,7 @@ export function Todolist(props: PropsType) {
         <div>
             <h3>{props.title}</h3>
             <div>
-            <input value={title} className={styles.error}
+            <input value={title} className={error ? styles.error : ''}
             onChange={onChangeHandler} onKeyPress={onKeyPressHendler} />
             <button onClick={addTaskHandler}>+</button>
             
