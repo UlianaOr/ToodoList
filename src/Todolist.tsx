@@ -88,7 +88,7 @@ export function Todolist(props: PropsType) {
             <input value={title} className={error ? styles.error : ''}
             onChange={onChangeHandler} onKeyPress={onKeyPressHendler} />
             <button onClick={addTaskHandler}>+</button>
-            {error && <div className={styles.errorMessages}>Title is requeredss</div>}
+            {error==true && <div className={styles.errorMessages}>Title is requeredss</div>}
             
         </div>
           
