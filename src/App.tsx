@@ -75,6 +75,7 @@ if (filter==='Completed') {
                 changeFilter={changeFilter}
                 addTask={addTask} 
                 changeIsDone={changeIsDone}
+                filter={filter}
                             />
       
             

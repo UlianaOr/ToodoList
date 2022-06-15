@@ -21,6 +21,7 @@ type PropsType = {
     changeFilter:(value: FilterValuesType)=>void
     addTask:(title:string)=>void 
     changeIsDone:(id:string,isDone:boolean)=> void
+    filter:FilterValuesType
     
 
 
