@@ -29,7 +29,7 @@ type PropsType = {
 
 
 export function Todolist(props: PropsType) {
-    let[error,setError]=useState(false)
+    let[error,setError]=useState<string|null>(null)
 
     let [title,setTitle]= useState("")
 
@@ -38,12 +38,12 @@ export function Todolist(props: PropsType) {
         props.addTask(title.trim())
         setTitle("");
         }else{
-           setError(true)
+           setError('Title is required')
         }
     }
 
     const onChangeHandler =(event:ChangeEvent<HTMLInputElement>)=>{
-        setError (false)
+        setError (null)
         setTitle(event.currentTarget.value)
     }
 
@@ -88,7 +88,7 @@ export function Todolist(props: PropsType) {
             <input value={title} className={error ? styles.error : ''}
             onChange={onChangeHandler} onKeyPress={onKeyPressHendler} />
             <button onClick={addTaskHandler}>+</button>
-            {error==true && <div className={styles.errorMessages}>Title is requeredss</div>}
+            {error && <div className={styles.errorMessages}>{error}</div>}
             
         </div>
           
@@ -116,10 +116,10 @@ export function Todolist(props: PropsType) {
                
             </ul>
             <div>
-                <button onClick={()=>chengeFilterHandlerUniversal("All")}>All</button>
+                <button className={styles.activeFilter} onClick={()=>chengeFilterHandlerUniversal("All")}>All</button>
 
-                <button onClick={()=>chengeFilterHandlerUniversal("Active")}>Active</button>
-                <button onClick={()=>chengeFilterHandlerUniversal("Completed")}>Completed</button>
+                <button className={styles.activeFilter} onClick={()=>chengeFilterHandlerUniversal("Active")}>Active</button>
+                <button className={styles.activeFilter} onClick={()=>chengeFilterHandlerUniversal("Completed")}>Completed</button>
             </div>
 
         </div>
