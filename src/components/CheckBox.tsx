@@ -1,10 +1,20 @@
-import React from "react";
+import { type } from "os";
+import React, { ChangeEvent } from "react";
 
-export const CheckBox = ()=> {
+type PropsType={
+    callBack:(isDone:boolean)=> void
+    isDone:boolean
+}
+
+export const CheckBox = (props:PropsType)=> {
+    const changeIsDoneHandler=(event:ChangeEvent<HTMLInputElement>)=>{
+        props.callBack(event.currentTarget.checked)
+
+
+    }
     return (
-        <div>
-
-        </div>
+        <input type= "checkbox" checked={props.isDone} 
+        onChange={changeIsDoneHandler}/>
     )
 }
 

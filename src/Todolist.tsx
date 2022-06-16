@@ -2,6 +2,7 @@
 import React, { ChangeEvent,KeyboardEvent, useState } from 'react';
 
 import { FilterValuesType } from './App';
+import { CheckBox } from './components/CheckBox';
 import styles from './Todolist.module.css'
 
 
@@ -63,7 +64,7 @@ export function Todolist(props: PropsType) {
     }
 
 
-    /*const chengeFilterHandlerAll=()=>{
+   /* const chengeFilterHandlerAll=()=>{
         props.changeFilter("All")
     }
 
@@ -76,6 +77,8 @@ export function Todolist(props: PropsType) {
         props.changeFilter(value)
 
     }
+
+    
 
 
 
@@ -101,7 +104,7 @@ export function Todolist(props: PropsType) {
                     return(
 
                      <li key= {t.id} className ={t.isDone ? styles.isDone: ""}>
-                         <input type= "checkbox" checked={t.isDone} onChange={changeIsDoneHandler}/>
+                         <CheckBox isDone={t.isDone}callBack={(isDone)=>changeIsDoneHandler(t.id,isDone)}/>
                     
                     <span>{t.title}</span>
                     <button onClick={() => {props.removeTask(t.id)}}>x</button>
