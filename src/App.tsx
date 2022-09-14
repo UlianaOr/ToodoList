@@ -8,6 +8,11 @@ export type FilterValuesType = "all" | "active" | "completed";
 
 function App() {
 
+    let [Todolist, setTodolist]=useState<Array<TodoListType>> ([
+        {id:v1(),title:'What to learn', filter:'all'},
+        {id:v1(),title:'What to learn', filter:'all'},
+    ])
+
     let [tasks, setTasks] = useState([
         {id: v1(), title: "HTML&CSS", isDone: true},
         {id: v1(), title: "JS", isDone: true},
@@ -28,6 +33,8 @@ function App() {
         let newTasks = [task, ...tasks];
         setTasks(newTasks);
     }
+
+   
 
     function changeStatus(taskId: string, isDone: boolean) {
         let task = tasks.find(t => t.id === taskId);
