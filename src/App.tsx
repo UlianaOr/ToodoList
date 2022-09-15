@@ -16,7 +16,7 @@ function App() {
 
     let [todolist, setTodolist]=useState<Array<TodoListType>> ([
         {id:v1(),title:'What to learn', filter:'all'},
-        {id:v1(),title:'What to learn', filter:'all'},
+        {id:v1(),title:'What to buy', filter:'completed'},
     ])
 
     let [tasks, setTasks] = useState([
@@ -26,7 +26,7 @@ function App() {
         {id: v1(), title: "Rest API", isDone: false},
         {id: v1(), title: "GraphQL", isDone: false},
     ]);
-    let [filter, setFilter] = useState<FilterValuesType>("all");
+   // let [filter, setFilter] = useState<FilterValuesType>("all");
 
 
     function removeTask(id: string) {
@@ -52,17 +52,10 @@ function App() {
     }
 
 
-    let tasksForTodolist = tasks;
-
-    if (filter === "active") {
-        tasksForTodolist = tasks.filter(t => t.isDone === false);
-    }
-    if (filter === "completed") {
-        tasksForTodolist = tasks.filter(t => t.isDone === true);
-    }
+   
 
     function changeFilter(value: FilterValuesType) {
-        setFilter(value);
+       // setFilter(value);
     }
 
 
@@ -70,14 +63,23 @@ function App() {
         <div className="App">
 
             {todolist.map((el: TodoListType) => {
+                 let tasksForTodolist = tasks;
+
+                 if (el.filter === "active") {
+                     tasksForTodolist = tasks.filter(t => t.isDone === false);
+                 }
+                 if (el.filter === "completed") {
+                     tasksForTodolist = tasks.filter(t => t.isDone === true);
+                 }
+
                 return (
-                    <Todolist title="What to learn"
+                    <Todolist title={el.title}
                     tasks={tasksForTodolist}
                     removeTask={removeTask}
                     changeFilter={changeFilter}
                     addTask={addTask}
                     changeTaskStatus={changeStatus}
-                    filter={filter}
+                    filter={el.filter}
                      />
 
                 )
