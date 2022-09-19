@@ -73,7 +73,9 @@ function App() {
                  }
 
                 return (
-                    <Todolist title={el.title}
+                    <Todolist 
+                    todolistID={el.id}
+                    title={el.title}
                     tasks={tasksForTodolist}
                     removeTask={removeTask}
                     changeFilter={changeFilter}
