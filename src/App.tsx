@@ -54,7 +54,8 @@ function App() {
 
    
 
-    function changeFilter(value: FilterValuesType) {
+    function changeFilter(todolistID:string,value: FilterValuesType) {
+        console.log(todolistID)
        // setFilter(value);
     }
 
@@ -74,6 +75,7 @@ function App() {
 
                 return (
                     <Todolist 
+                    key= {el.id}
                     todolistID={el.id}
                     title={el.title}
                     tasks={tasksForTodolist}
