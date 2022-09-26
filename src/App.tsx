@@ -13,8 +13,10 @@ type TodoListType= {
 }
 
 function App() {
+    let todolistID1=v1();
+    let todolistID2=v1();
 
-    let [todolists, setTodolists] = useState<Array<todoListsType>> ([
+    let [todolists, setTodolists] = useState<Array<TodoListType>> ([
         {id:todolistID1, title:'What to learn', filter:'all'},
         {id:todolistID2,title:'What to buy', filter:'completed'},
     ])
