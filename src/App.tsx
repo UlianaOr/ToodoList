@@ -15,10 +15,11 @@ type TodoListType= {
 function App() {
     let todolistID1=v1();
     let todolistID2=v1();
+    
 
     let [todolists, setTodolist] = useState<Array<TodoListType>> ([
         {id:todolistID1, title:'What to learn', filter:'all'},
-        {id:todolistID2,title:'What to buy', filter:'completed'},
+        {id:todolistID2,title:'What to buy', filter:'all'},
     ])
 
     let [tasks, setTasks] = useState({
@@ -43,8 +44,8 @@ function App() {
    // let [filter, setFilter] = useState<FilterValuesType>("all");
 
 
-    function removeTask(todolistID:string,id: string) {
-        setTasks({...tasks, [todolistID1] : tasks [todolistID] .})
+    function removeTask(todolistID:string,taskId: string) {
+        setTasks({...tasks, [todolistID1] : tasks [todolistID] . filter(el=> el.id !== taskId)})
        // let filteredTasks = tasks.filter(t => t.id != id);
        // setTasks(filteredTasks);
     }
@@ -70,9 +71,9 @@ function App() {
    
 
     function changeFilter(todolistID:string,value: FilterValuesType) {
-        setTodolists (todolists.map (el =>el.id === todolistID ? {...el, filter: value} : el ));
+        setTodolist (todolists.map (el =>el.id === todolistID ? {...el, filter: value} : el ));
        // setFilter(value);
-    }
+    
 
 
     return (
@@ -106,7 +107,8 @@ function App() {
             
                     
         </div>
-    );
-}
+    )}
+
+        
 
 export default App;
