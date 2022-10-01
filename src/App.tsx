@@ -6,7 +6,7 @@ import {v1} from 'uuid';
 
 export type FilterValuesType = "all" | "active" | "completed";
 
-type TodoListType= {
+type TodoListsType= {
     id:string,
     title:string,
     filter:FilterValuesType
@@ -17,7 +17,7 @@ function App() {
     let todolistID2=v1();
     
 
-    let [todolists, setTodolist] = useState<Array<TodoListType>> ([
+    let [todolists, setTodolist] = useState<Array<TodoListsType>> ([
         {id:todolistID1, title:'What to learn', filter:'all'},
         {id:todolistID2,title:'What to buy', filter:'all'},
     ])
