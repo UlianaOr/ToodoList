@@ -40,7 +40,7 @@ function App() {
         ]
 });
 
-    // console.log(tasks[todoListID1])
+     console.log(tasks[todoListID1])
    // let [filter, setFilter] = useState<FilterValuesType>("all");
 
 
@@ -65,14 +65,15 @@ function App() {
         }
 
        // setTasks([...tasks]);
-    }
+    
 
 
    
 
     function changeFilter(todoListID:string,value: FilterValuesType) {
        // setTodoList (todoLists.map (el =>el.id === todoListID ? {...el, filter: value} : el ));
-       // setFilter(value);
+       // setFilter(value); 
+    }
     
 
 
