@@ -51,6 +51,8 @@ function App() {
     }
 
     function addTask(title: string) {
+        let newTask = {id: v1(), title: title, isDone: false};
+        //setTasks({...tasks, [todoListID]: [newTask,...tasks[todoListID]]})
         //let task = {id: v1(), title: title, isDone: false};
         //let newTasks = [task, ...tasks];
        // setTasks(newTasks);
@@ -58,7 +60,8 @@ function App() {
 
    
 
-    function changeStatus(taskId: string, isDone: boolean) {
+    function changeStatus(todoListID:string, taskId: string, isDone: boolean) {
+        setTasks({...tasks, [todoListID] : tasks [todoListID].map(el=>el.id === taskId ? {...el, isDone: isDone} : el)})
         //let task = tasks.find(t => t.id === taskId);
        // if (task) {
            // task.isDone = isDone;
