@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import './App.css';
 import {Todolist} from './Todolist';
 import {v1} from 'uuid';
+import { TLSSocket } from 'tls';
 
 export type FilterValuesType = "all" | "active" | "completed";
 
@@ -40,9 +41,15 @@ function App() {
         ]
 });
 
-     console.log(tasks[todoListID1])
+     //console.log(tasks[todoListID1])
    // let [filter, setFilter] = useState<FilterValuesType>("all");
 
+    const removeTodoList =(todoListID:string,) =>{
+        setTodoLists(todoLists.filter (el=>el.id! ===todoListID))
+        delete tasks [todoListID]
+        console.log(tasks)
+
+    }
 
     function removeTask(todoListID:string,taskId: string) {
        setTasks({...tasks, [todoListID] : tasks [todoListID] . filter(el=> el.id !== taskId)})
@@ -50,8 +57,10 @@ function App() {
        // setTasks(filteredTasks);
     }
 
-    function addTask(title: string) {
-        let newTask = {id: v1(), title: title, isDone: false};
+    function addTask(title: string, todoListID: string) {
+        let task = {id: v1(), title: title, isDone: false};
+        let todoListTasks = tasks [todoListID];
+        tasks[todoListID] = [task, ... todoListTasks];
         //setTasks({...tasks, [todoListID]: [newTask,...tasks[todoListID]]})
         //let task = {id: v1(), title: title, isDone: false};
         //let newTasks = [task, ...tasks];
@@ -94,6 +103,7 @@ function App() {
                     
                     <Todolist 
                     key= {el.id}
+                    id= {el. id}
                     todoListID={el.id}
                     title={el.title}
                     tasks={tasksForTodoList}
@@ -102,6 +112,8 @@ function App() {
                     addTask={addTask}
                     changeTaskStatus={changeStatus}
                     filter={el.filter}
+                    removeTodoList= {removeTodoList}
+                    
                      />
 
                     
