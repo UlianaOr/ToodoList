@@ -4,6 +4,8 @@ import './App.css';
 import {Todolist} from './Todolist';
 import {v1} from 'uuid';
 import { TLSSocket } from 'tls';
+import { Input } from './components/input';
+import { EditableSpan } from './components/EditableSpan';
 
 export type FilterValuesType = "all" | "active" | "completed";
 
@@ -40,9 +42,16 @@ function App() {
             
         ]
 });
+      
+    const addTodoList = (newTitle: string,) => {
 
-     //console.log(tasks[todoListID1])
-   // let [filter, setFilter] = useState<FilterValuesType>("all");
+        let newID =v1 ()
+        let newTodoList: TodoListsType = {id: newID, title: newTitle, filter:'all'};
+
+        setTodoLists([newTodoList,... todoLists])
+         setTasks( {...tasks, [newID]:[]})
+
+    }
 
     const removeTodoList =(todoListID:string,) =>{
         setTodoLists(todoLists.filter (el=>el.id! ===todoListID))
@@ -91,6 +100,9 @@ function App() {
 
     return (
         <div className="App">
+
+            <Input callBack ={addTodoList}/>
+
                {todoLists.map((el: TodoListsType  ,index: number)=>{
                 let tasksForTodoList = tasks[el.id];
                 if (el.filter === "active") {
