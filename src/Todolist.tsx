@@ -25,6 +25,7 @@ type PropsType = {
     changeTaskStatus: (todoListID:string, taskId: string, isDone: boolean) => void
     filter: FilterValuesType
     removeTodoList: (todoListID: string) =>void
+    editTask:(todoListID: string, taskId: string, newTitle: string)=>void
    
 }
 
@@ -45,6 +46,10 @@ export function Todolist(props: PropsType) {
         props.addTask(newTitle, props.id)
     }
 
+    const editTaskHandler=(taskID:string, newTitle:string)=> {
+        props.editTask(props.id,taskID,newTitle)
+    }
+
 
     return <div>
         <h3>
@@ -54,15 +59,7 @@ export function Todolist(props: PropsType) {
             <Input callBack = {addTaskHandler}/>
 
 
-        {/*<div>
-            <input value={title}
-                   onChange={onChangeHandler}
-                   onKeyPress={onKeyPressHandler}
-                   className={error ? "error" : ""}
-            />
-            <button onClick={addTask}>+</button>
-            {error && <div className="error-message">{error}</div>}
-</div>*/}
+
         <ul>
             {
                 props.tasks.map(t => {
@@ -76,7 +73,7 @@ export function Todolist(props: PropsType) {
                                onChange={onChangeHandler}
                                checked={t.isDone}/>
                               
-                        <EditableSpan title= {t.title} callBack = {()=>{}}/>
+                        <EditableSpan title= {t.title} callBack = { (newTitle)=>editTaskHandler(t.id,newTitle)}/>
                         <button onClick={onClickHandler}>x</button>
                     </li>
                 })

@@ -51,7 +51,7 @@ function App() {
     }
     
     //
-    
+
     const addTodoList = (newTitle: string,) => {
 
         let newID =v1 ()
@@ -134,6 +134,7 @@ function App() {
                     changeTaskStatus={changeStatus}
                     filter={el.filter}
                     removeTodoList= {removeTodoList}
+                    editTask= {editTask}
                     
                      />
 
