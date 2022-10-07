@@ -4,6 +4,7 @@ import {FilterValuesType} from './App';
 import { EditableSpan } from './components/EditableSpan';
 import { Input } from './components/input';
 
+
 type TaskType = {
 
     id: string
@@ -74,8 +75,8 @@ export function Todolist(props: PropsType) {
                         <input type="checkbox"
                                onChange={onChangeHandler}
                                checked={t.isDone}/>
-                        <span>{t.title}</span>
-                        <EditableSpan/>
+                              
+                        <EditableSpan title= {t.title} callBack = {()=>{}}/>
                         <button onClick={onClickHandler}>x</button>
                     </li>
                 })

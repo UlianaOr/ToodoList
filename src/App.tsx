@@ -42,7 +42,16 @@ function App() {
             
         ]
 });
-      
+
+
+    // подключение EditableSpan
+
+    const editTask=(todoListID: string, taskId: string, newTitle: string) => {
+        console.log (newTitle)
+    }
+    
+    //
+    
     const addTodoList = (newTitle: string,) => {
 
         let newID =v1 ()
