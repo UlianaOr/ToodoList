@@ -44,10 +44,16 @@ function App() {
 });
 
 
+    const editTodoList = (todoListID: string,newTitle: string) => {
+        setTodoLists(todoLists.map(el=>el.id ===todoListID ? {...el, title:newTitle} :el))
+
+    }
+
+
     // подключение EditableSpan
 
     const editTask=(todoListID: string, taskId: string, newTitle: string) => {
-        console.log (newTitle)
+        console.log ({...tasks, [todoListID]:tasks[todoListID].map(el=>el.id===taskId ?{...el,title:newTitle} : el)})
     }
     
     //
@@ -135,6 +141,7 @@ function App() {
                     filter={el.filter}
                     removeTodoList= {removeTodoList}
                     editTask= {editTask}
+                    editTodoList = { editTodoList }
                     
                      />
 
