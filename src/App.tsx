@@ -48,7 +48,8 @@ function App() {
 
 
      const addTodolist=()=> {
-        
+        console.log()
+
      }
 
     function addTask(title: string, todolistId: string) {
