@@ -55,7 +55,7 @@ export function Todolist(props: PropsType) {
         <h3> {props.title}
             <button onClick={removeTodolist}>x</button>
         </h3>
-        <AddItemForm addTask= {props.addTask} todolistID={props.id}/>
+       
 {/*         <div>
             <input value={title}
                    onChange={onChangeHandler}

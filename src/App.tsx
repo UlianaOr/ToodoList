@@ -46,6 +46,11 @@ function App() {
         setTasks({...tasks});
     }
 
+
+     const addTodolist=()=> {
+        
+     }
+
     function addTask(title: string, todolistId: string) {
         let task = {id: v1(), title: title, isDone: false};
         //достанем нужный массив по todolistId:
@@ -88,6 +93,7 @@ function App() {
 
     return (
         <div className="App">
+             <AddItemForm addTask= {props.addTask} todolistID={props.id}/>
             {
                 todolists.map(tl => {
                     let allTodolistTasks = tasks[tl.id];
