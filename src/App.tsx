@@ -48,8 +48,13 @@ function App() {
 
 
      const addTodolist=()=> {
-        console.log()
+     let newID= v1() 
+     let newTodolist:TodolistType={id: newID, title: "New Todolist", filter: "all"};
 
+     setTodolists([newTodolist,...todolists ])
+
+                // взяли таски из обьекта, вставляеи их в обьект, массив
+     setTasks ({...tasks, [newID] : []})
      }
 
     function addTask(title: string, todolistId: string) {
@@ -94,7 +99,7 @@ function App() {
 
     return (
         <div className="App">
-             <AddItemForm addTask= {props.addTask} todolistID={props.id}/>
+             <AddItemForm addTask= {addTodolist} todolistID={'jhgv'}/>
             {
                 todolists.map(tl => {
                     let allTodolistTasks = tasks[tl.id];
