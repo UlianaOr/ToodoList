@@ -47,7 +47,7 @@ function App() {
     }
 
 
-     const addTodolist=()=> {
+     const addTodolist=(title:string, todolistId: string)=> {
      let newID= v1() 
      let newTodolist:TodolistType={id: newID, title: "New Todolist", filter: "all"};
 
