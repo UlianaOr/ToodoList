@@ -8,10 +8,13 @@ type PropsType= {
 
 
 export const EditableSpan=( props: PropsType) => {
-    let [edit,setEdit]= useState (false)
+    let [edit,setEdit]= useState (true)
+    const onDoubleClickHandler = ()=> {
+        setEdit (true)
+    }
    return (
     edit
-    ? <input value={props.title}/>
-    :<span>{props.title}</span>
+    ? <input  value={props.title}/>
+    :<span onDoubleClick={onDoubleClickHandler}>{props.title}</span>
    ) 
 }
