@@ -2,6 +2,9 @@ import React, {ChangeEvent, useState, KeyboardEvent} from "react";
 
 type PropsType= {
     title: string
+    updateTask:(todolistId: string, id: string, title: string)=>void
+    todolistId: string
+    id: string
     
 }
 
@@ -10,8 +13,8 @@ type PropsType= {
 export const EditableSpan=( props: PropsType) => {
     let [title, setTitle] = useState (props.title)
 
-    const onChangeHandler = (event:ChangeEvent <HTMLInputElement>)=> {
-
+    const onChangeHandler = (e:ChangeEvent <HTMLInputElement>)=> {
+     setTitle (e.currentTarget.value)
     }
 
     let [edit,setEdit]= useState (false)
@@ -21,6 +24,7 @@ export const EditableSpan=( props: PropsType) => {
 
     const onBlurHandler =()=> {
         setEdit (false)
+        props.updateTask(props.todolistId, props.id, title)
     }
    return (
     edit
