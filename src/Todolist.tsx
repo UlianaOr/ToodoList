@@ -2,7 +2,7 @@ import React, {ChangeEvent} from 'react';
 import {FilterValuesType} from './App';
 import {AddItemForm} from './AddItemForm';
 import {EditableSpan} from './EditableSpan';
-import { Button, IconButton } from '@material-ui/core';
+import { Button, Checkbox, IconButton } from '@material-ui/core';
 import { Delete } from '@material-ui/icons';
 
 export type TaskType = {
@@ -64,26 +64,22 @@ export function Todolist(props: PropsType) {
 
 
                     return <li key={t.id} className={t.isDone ? "is-done" : ""}>
-                        <input type="checkbox" onChange={onChangeHandler} checked={t.isDone}/>
+
+                        <Checkbox onChange={onChangeHandler} checked={t.isDone}
+                        />
+
+
                         <EditableSpan value={t.title} onChange={onTitleChangeHandler} />
-                      {/*  <button onClick={onClickHandler}>x</button> */}
-                      <IconButton aria-label="delete" >
-                      <Delete onClick={removeTodolist}/>
-                       </IconButton>
+
+                        <IconButton aria-label="delete" >
+                            <Delete onClick={removeTodolist} />
+                        </IconButton>
                     </li>
                 })
             }
         </ul>
         <div>
-           {/*  <button className={props.filter === 'all' ? "active-filter" : ""}
-                    onClick={onAllClickHandler}>All
-            </button>
-            <button className={props.filter === 'active' ? "active-filter" : ""}
-                    onClick={onActiveClickHandler}>Active
-            </button>
-            <button className={props.filter === 'completed' ? "active-filter" : ""}
-                    onClick={onCompletedClickHandler}>Completed
-            </button> */}
+           
             <Button variant={props.filter === 'all' ? "outlined" : "contained"} color="primary" size="small" onClick={onAllClickHandler}>
             All
            </Button>
