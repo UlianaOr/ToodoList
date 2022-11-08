@@ -4,6 +4,7 @@ import {TaskType, Todolist} from './Todolist';
 import {v1} from 'uuid';
 import {AddItemForm} from './AddItemForm';
 import ButtonAppBar from './components/ButtonAppBar';
+import { Container, Grid } from '@material-ui/core';
 
 export type FilterValuesType = "all" | "active" | "completed";
 type TodolistType = {
@@ -120,7 +121,12 @@ function App() {
     return (
         <div className="App">
             <ButtonAppBar/>
+
+            <Container fixed>
+        <Grid container>
             <AddItemForm addItem={addTodolist} />
+        </Grid>   
+            
             {
                 todolists.map(tl => {
                     let allTodolistTasks = tasks[tl.id];
@@ -149,6 +155,7 @@ function App() {
                     />
                 })
             }
+             </Container>
 
         </div>
     );
