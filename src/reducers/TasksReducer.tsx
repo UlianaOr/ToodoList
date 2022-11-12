@@ -1,10 +1,10 @@
-import { type } from "os";
+
 import { TaskType } from "../Todolist";
 
 
-export const TasksReducer = (state: Array <TaskType>, action: any) => {
+export const TasksReducer = (state: Array <TaskType>, action:  tsarACType) => {
     switch (action.type) {
-        case 'XXX' : {
+        case "REMOVE-TASK" : {
             return state
         }
 
