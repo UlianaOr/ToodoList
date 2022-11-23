@@ -1,3 +1,5 @@
+import { type } from 'os';
+import { v1 } from 'uuid';
 import {TodolistType} from '../App';
 
 type ActionType = {
@@ -9,12 +11,16 @@ export const todolistsReducer= (state: Array <TodolistType>, action: ActionType)
     switch(action.type) {
         case 'REMOVE-TODOLIST':{
 
-            //setTodolists(todolists.filter(tl => tl.id != id));
-            // удалим таски для этого тудулиста из второго стейта, где мы храним отдельно таски
-            //delete tasks[id]; // удаляем св-во из объекта... значением которого являлся массив тасок
-            // засетаем в стейт копию объекта, чтобы React отреагировал перерисовкой
-           // setTasks({...tasks});
+            
            return state.filter (el=>el.id!==action.payload.todolistId1)
+        }
+        case 'ADD-TODOLIST':{
+            let newTodolist: TodolistType = {id: v1(), title:action.payload.newTodolistTitle, filter: 'all'};
+            //setTodolists([newTodolist, ...todolists]);
+           // setTasks({
+            //...tasks,
+            //[newTodolistId]: []
+            return [...state, newTodolist]
         }
         default:
             return state
@@ -30,4 +36,14 @@ export const removeTodolistAC=(todolistId1:string)=>{
         type: 'REMOVE-TODOLIST', 
         payload: {todolistId1}
     } as const
+}
+
+
+type addTodolistACType=ReturnType<typeof addTodolistAC>
+export const addTodolistAC=(newTodolistTitle: string)=> {
+    return {
+        type: 'ADD-TODOLIST', 
+        payload: {newTodolistTitle}
+    } as const
+    
 }
