@@ -1,6 +1,6 @@
 import { type } from 'os';
 import { v1 } from 'uuid';
-import {TodolistType} from '../App';
+import {FilterValuesType, TodolistType} from '../App';
 
 type ActionType = {
     type: string
@@ -20,13 +20,13 @@ export const todolistsReducer= (state: Array <TodolistType>, action: ActionType)
             return [...state, newTodolist]
         }
         case 'CHANGE-TODOLIST-TITLE': {
-           // const todolist = todolists.find(tl => tl.id === id);
-           //if (todolist) {
-            // если нашёлся - изменим ему заголовок
-           // todolist.title = title;
-           // setTodolists([...todolists]);
-       // }
+           
             return state.map (el=>el.id===action.payload.todolistId2 ? {...el,title:action.payload.newTodolistTitle}:el)
+        }
+        case 'CHANGE-TODOLIST-FILTER' : {
+         
+
+            return state.map(el=>el.id===action.payload.todolistId2 ? {...el,filter:action.payload.newFilter}: el)
         }
         default:
             return state
@@ -35,7 +35,8 @@ export const todolistsReducer= (state: Array <TodolistType>, action: ActionType)
     }
 
 }
-type tsarType=removeTodolistACType | addTodolistACType | changeTodolistTitleAC
+
+type tsarType=removeTodolistACType | addTodolistACType | changeTodolistTitleAC | changeFilterACType
 type removeTodolistACType=ReturnType<typeof removeTodolistAC>
 export const removeTodolistAC=(todolistId1:string)=>{
     return{
@@ -63,4 +64,17 @@ export const changeTodolistTitleAC=(todolistId2:string,  newTodolistTitle:string
          newTodolistTitle
         }
     }as const
+}
+
+
+type ReturnType=<typeof changeFilterAC>
+export const changeFilterAC=(todolistId2:string, newFilter:FilterValuesType)=>{
+     return {
+        type: 'CHANGE-TODOLIST-FILTER',
+        payload: {
+            id: todolistId2, newFilter
+        }
+        
+        
+     }as const
 }
