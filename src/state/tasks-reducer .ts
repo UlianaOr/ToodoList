@@ -10,7 +10,7 @@ export type AddTodolistActionType = {
    
 }
 
-export type FirstActionType= ReturnType<typeof firstAC>
+export type FirstActionType= ReturnType<typeof removeTaskAC>
 export type SecondActionType= ReturnType<typeof secondAC>
 
 
